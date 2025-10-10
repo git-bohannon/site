@@ -40,7 +40,8 @@
           <div class="cta">
             <a href="#work" class="btn">See Highlights ▸</a>
             <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
-            <a href="Ben_Bohannon_Resume.docx" class="btn btn-outline">Download Résumé</a>
+            <a href="Ben_Bohannon_Resume.docx" class="btn btn-outline">Download Résumé (DOCX)</a>
+            <a href="Ben_Bohannon_Resume.pdf" class="btn btn-outline">Download Résumé (PDF)</a>
           </div>
           <ul class="chips">
             <li>Enterprise Transformation</li><li>Program/Portfolio Leadership</li><li>Cloud Strategy (Azure)</li><li>APIs & Integration</li>
@@ -48,7 +49,7 @@
           </ul>
         </div>
         <div class="hero-photo">
-          <img src="headshot.jpg" alt="Headshot of Ben Bohannon" width="220" height="220" />
+          <img src="headshot.jpg" alt="Headshot of Ben Bohannon" width="240" height="240" />
         </div>
       </div>
     </section>
@@ -125,26 +126,23 @@
             <div class="contact-label">LinkedIn</div>
             <div><a href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer">linkedin.com/in/fluent</a></div>
           </div>
-          <div class="contact-actions">
-            <a class="btn" href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer">View Profile</a>
-          </div>
+          <div class="contact-actions"><a class="btn" href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer">View Profile</a></div>
         </div>
         <div class="contact-row">
           <div>
             <div class="contact-label">Email</div>
             <div><a href="mailto:benbohannon@gmail.com">benbohannon@gmail.com</a></div>
           </div>
-          <div class="contact-actions">
-            <a class="btn btn-ghost" href="mailto:benbohannon@gmail.com">Send Email</a>
-          </div>
+          <div class="contact-actions"><a class="btn btn-ghost" href="mailto:benbohannon@gmail.com">Send Email</a></div>
         </div>
         <div class="contact-row">
           <div>
             <div class="contact-label">Résumé</div>
-            <div><a href="Ben_Bohannon_Resume.docx">Ben_Bohannon_Resume.docx</a></div>
+            <div><a href="Ben_Bohannon_Resume.pdf">Ben_Bohannon_Resume.pdf</a> • <a href="Ben_Bohannon_Resume.docx">Ben_Bohannon_Resume.docx</a></div>
           </div>
           <div class="contact-actions">
-            <a class="btn btn-outline" href="Ben_Bohannon_Resume.docx">Download Résumé</a>
+            <a class="btn btn-outline" href="Ben_Bohannon_Resume.pdf">Download PDF</a>
+            <a class="btn btn-outline" href="Ben_Bohannon_Resume.docx">Download DOCX</a>
           </div>
         </div>
       </div>
@@ -163,13 +161,12 @@
   </footer>
 
   <script>
-    // Default to dark, regardless of system preference; persist user toggle
+    // Default to dark; toggle persists
     (function() {
       const key = "bb-theme";
       const saved = localStorage.getItem(key);
-      const theme = saved || "dark"; // force dark default
+      const theme = saved || "dark";
       if (theme === "light") document.documentElement.classList.add("light");
-
       const btn = document.querySelector('.theme-toggle');
       btn && btn.addEventListener('click', () => {
         const isLight = document.documentElement.classList.toggle('light');
@@ -177,12 +174,9 @@
         const meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', isLight ? '#f7f9ff' : '#000B18');
       });
-
-      // Ensure meta color matches initial theme
       const meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f9ff' : '#000B18');
     })();
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
