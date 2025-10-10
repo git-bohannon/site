@@ -1,0 +1,256 @@
+import { useState } from "react";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Linkedin, FileText, ChevronRight, Sparkles, Award, Globe2, Cloud, Cpu, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function BenBohannonSite() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const highlights = [
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: "$30M Portfolio Turnaround",
+      text: "Rescued global portfolio program impacting 8,000 users; re-architected data/integration & analytics and delivered in 7 months.",
+      tags: ["Agile Delivery", "MuleSoft", "Analytics"],
+    },
+    {
+      icon: <Cloud className="w-6 h-6" />,
+      title: "$4.5M Azure Savings",
+      text: "Consolidated 200+ subscriptions & 300 DevOps projects; achieved 100% InfoSec compliance across global production systems.",
+      tags: ["Cloud Governance", "Cost Optimization", "Security"],
+    },
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      title: "IoT Sensor Venture (Patented)",
+      text: "Led product & architecture for multi-function sensor; reduced unplanned downtime by ~30% with ML-driven anomaly detection.",
+      tags: ["IoT", "ML", "Product Leadership"],
+    },
+    {
+      icon: <Globe2 className="w-6 h-6" />,
+      title: "$5B Campuses Systems",
+      text: "Delivered $50M portfolio of 12 systems for Houston & Calgary campuses supporting ~12,500 staff on time and budget.",
+      tags: ["Systems Integration", "Security", "BMS"],
+    },
+  ];
+
+  const skills = [
+    "Enterprise Transformation", "Program/Portfolio Leadership", "Cloud Strategy (Azure)", "APIs & Integration",
+    "Data & Analytics (Power BI / Tableau)", "IoT / Edge / ML", "Change Management", "Financial Transformation (FP&A)"
+  ];
+
+  const certifications = [
+    "SAFe 6.0 Certified",
+    "Microsoft Azure Administrator (AZ-104)",
+    "Microsoft Azure Fundamentals (AZ-900)",
+    "AI/ML in Financial Services",
+    "TOGAF (in progress)"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-slate-100">
+      {/* Nav */}
+      <header className="sticky top-0 z-40 backdrop-blur bg-black/30 border-b border-white/10">
+        <nav className="container mx-auto flex items-center justify-between py-4 px-4">
+          <a href="#top" className="font-semibold tracking-wide">BB</a>
+          <div className="hidden md:flex gap-6 text-sm">
+            <a href="#work" className="hover:text-white/90">Work</a>
+            <a href="#experience" className="hover:text-white/90">Experience</a>
+            <a href="#about" className="hover:text-white/90">About</a>
+            <a href="#contact" className="hover:text-white/90">Contact</a>
+          </div>
+          <div className="flex gap-2">
+            <a href="mailto:benbohannon@gmail.com" aria-label="Email"><Button variant="secondary" className="rounded-2xl"><Mail className="w-4 h-4 mr-2"/>Email</Button></a>
+            <a href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Button className="rounded-2xl"><Linkedin className="w-4 h-4 mr-2"/>LinkedIn</Button>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section id="top" className="container mx-auto px-4 pt-16 pb-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+              <Sparkles className="w-3.5 h-3.5"/>
+              <span>Enterprise Transformation & Technology Leader</span>
+            </div>
+            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+              Ben Bohannon
+            </h1>
+            <p className="mt-5 text-base md:text-lg text-white/80">
+              I help organizations turn complexity into clarity — translating strategy into execution across cloud, data, IoT, and financial systems to deliver measurable business impact.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#work"><Button size="lg" className="rounded-2xl">See Highlights <ChevronRight className="w-4 h-4 ml-1"/></Button></a>
+              <a href="#contact"><Button size="lg" variant="secondary" className="rounded-2xl">Let’s Connect</Button></a>
+              <a href="#resume" className="md:ml-2"><Button size="lg" variant="outline" className="rounded-2xl"><FileText className="w-4 h-4 mr-2"/>Download Résumé</Button></a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {skills.map((s) => (
+                <Badge key={s} variant="secondary" className="rounded-xl bg-white/10 text-white/90 border-white/10">{s}</Badge>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Work Highlights */}
+      <section id="work" className="container mx-auto px-4 py-12">
+        <div className="flex items-center gap-3 mb-6">
+          <Award className="w-5 h-5 opacity-80"/>
+          <h2 className="text-2xl md:text-3xl font-bold">Selected Highlights</h2>
+        </div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+          {highlights.map((h, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+              <Card className="bg-white/5 border-white/10 rounded-2xl h-full">
+                <CardHeader className="space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 grid place-items-center">{h.icon}</div>
+                  <CardTitle className="text-base">{h.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-white/80">{h.text}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {h.tags.map((t) => (
+                      <Badge key={t} className="rounded-xl bg-white/10 border-white/10 text-white/80">{t}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="container mx-auto px-4 py-12">
+        <div className="flex items-center gap-3 mb-6">
+          <Globe2 className="w-5 h-5 opacity-80"/>
+          <h2 className="text-2xl md:text-3xl font-bold">Experience</h2>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-5">
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">ExxonMobil — Business Transformation Design Lead (2023)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Shaped strategy & systems to modernize global FP&A; enabled 2,000 finance professionals and harmonized enterprise processes.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Enterprise Architect / Product Lead, Digital Sensor Venture (2021–2023)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Led IoT architecture & product; patented ML-based sensor reduced unplanned downtime by ~30%; accelerated time-to-market by 12 months.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Upstream Azure Product Manager (2020–2021)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Delivered $4.5M platform savings; consolidated 200+ subs & 300 DevOps projects; achieved 100% InfoSec compliance.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Technical Program Manager, Integration & Analytics (2019–2020)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Turned around $30M portfolio program; increased velocity ~200%; built 70 APIs across 12 systems; streamlined reporting by 80%.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Enterprise PMO Manager (2015–2018)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Directed $65M+ portfolio; led SAP/HANA programs; replaced 25-year legacy capital system saving $5M annually.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Campus Systems Implementation Manager (2013–2014)</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-2">
+              <p>Delivered $50M of systems for $5B campuses in Houston & Calgary; 12 systems across residential, BMS, and security.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="container mx-auto px-4 py-12">
+        <div className="grid lg:grid-cols-3 gap-6 items-start">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">About Ben</h2>
+            <p className="text-white/80 leading-relaxed">
+              Proud Missourian based in Houston, I’m a servant leader who loves simplifying complexity and empowering teams. I focus on
+              the human side of technology while delivering results at scale. I’ve earned ExxonMobil’s Enterprise Innovation Award and thrive where
+              strategy, execution, and innovation meet.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {certifications.map((c) => (
+                <Badge key={c} className="rounded-xl bg-white/10 border-white/10 text-white/80">{c}</Badge>
+              ))}
+            </div>
+          </div>
+          <Card className="bg-white/5 border-white/10 rounded-2xl">
+            <CardHeader>
+              <CardTitle className="text-lg">Quick Facts</CardTitle>
+            </CardHeader>
+            <CardContent className="text-white/80 text-sm space-y-3">
+              <ul className="list-disc pl-5 space-y-2">
+                <li>20+ years leading enterprise transformation</li>
+                <li>Cloud, IoT, Data & FP&A modernization</li>
+                <li>Servant leader; team-first builder</li>
+                <li>Dad, maker, and curious technologist</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="container mx-auto px-4 py-14">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Let’s talk</h2>
+          <p className="text-white/80 mb-6">Interested in working together, speaking, or just swapping ideas on transformation, AI, or product? Send a note.</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Input placeholder="Your name" value={form.name} onChange={(e)=>setForm({...form, name:e.target.value})} className="bg-white/5 border-white/10 rounded-2xl"/>
+            <Input type="email" placeholder="Email" value={form.email} onChange={(e)=>setForm({...form, email:e.target.value})} className="bg-white/5 border-white/10 rounded-2xl"/>
+            <Textarea placeholder="Message" value={form.message} onChange={(e)=>setForm({...form, message:e.target.value})} className="md:col-span-2 bg-white/5 border-white/10 rounded-2xl" rows={5}/>
+          </div>
+          <div className="mt-4 flex gap-3">
+            <Button className="rounded-2xl">Send <ChevronRight className="w-4 h-4 ml-1"/></Button>
+            <a href="mailto:benbohannon@gmail.com"><Button variant="secondary" className="rounded-2xl"><Mail className="w-4 h-4 mr-2"/>Email me</Button></a>
+          </div>
+          <div id="resume" className="mt-8 flex items-center gap-3 text-white/70 text-sm">
+            <FileText className="w-4 h-4"/>
+            <span>
+              Want the full details? <a className="underline underline-offset-4" href="#" title="Replace with hosted resume link">Download my résumé</a>.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-8 text-white/60 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2"><Sparkles className="w-4 h-4"/> <span>Transforming business with technology</span></div>
+          <div className="flex items-center gap-4">
+            <a className="hover:text-white" href="mailto:benbohannon@gmail.com"><Mail className="w-4 h-4"/></a>
+            <a className="hover:text-white" href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer"><Linkedin className="w-4 h-4"/></a>
+            <span className="opacity-60">© {new Date().getFullYear()} Ben Bohannon</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
