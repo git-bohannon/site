@@ -6,7 +6,8 @@
   <title>Ben Bohannon — Enterprise Transformation & Technology Leader</title>
   <meta name="description" content="I help organizations turn complexity into clarity — translating strategy into execution across cloud, data, IoT, and financial systems to deliver measurable business impact.">
   <meta name="robots" content="index,follow" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230b1220'/><text x='50' y='58' font-size='52' fill='white' font-family='Arial' text-anchor='middle'>BB</text></svg>">
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,7 +20,7 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="actions">
+      <div class="actions"><button class="btn btn-ghost theme-toggle" aria-label="Toggle theme">🌓</button>
         <a class="btn btn-ghost" href="mailto:benbohannon@gmail.com">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/fluent" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
@@ -28,6 +29,8 @@
 
   <main id="top">
     <section class="hero container">
+  <div class="hero-grid">
+    <div class="hero-text">
       <div class="pill">Enterprise Transformation & Technology Leader</div>
       <h1>Ben Bohannon</h1>
       <p class="lead">
@@ -42,7 +45,13 @@
         <li>Enterprise Transformation</li><li>Program/Portfolio Leadership</li><li>Cloud Strategy (Azure)</li><li>APIs & Integration</li>
         <li>Data & Analytics (Power BI / Tableau)</li><li>IoT / Edge / ML</li><li>Change Management</li><li>Financial Transformation (FP&A)</li>
       </ul>
-    </section>
+    </div>
+    <div class="hero-photo">
+      <img src="headshot.jpg" alt="Headshot of Ben Bohannon" width="220" height="220" />
+    </div>
+  </div>
+</section>
+
 
     <section id="work" class="container section">
       <h2>Selected Highlights</h2>
@@ -137,8 +146,23 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  (function() {
+    const key = "bb-theme";
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const saved = localStorage.getItem(key);
+    const theme = saved || (prefersLight ? "light" : "dark");
+    if (theme === "light") document.documentElement.classList.add("light");
+    document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light');
+      localStorage.setItem(key, isLight ? 'light' : 'dark');
+      // Update meta theme-color for mobile UI
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', isLight ? '#f7f9ff' : '#0b1220');
+    });
+  })();
+</script>
+
 </body>
 </html>
