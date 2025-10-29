@@ -1,18 +1,17 @@
 :root { --bg:#0b1220; --surface:rgba(255,255,255,0.06); --border:rgba(255,255,255,0.12); --text:#e5ecff; --muted:rgba(255,255,255,0.75); }
 *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-a{color:var(--text);text-decoration:none}
-a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
+a{color:var(--text);text-decoration:none} a:hover{text-decoration:underline}
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
 .nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(0,0,0,0.3);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{font-weight:700;letter-spacing:.05em}
 .links a{margin:0 10px;opacity:.9}
-.actions .btn{background:var(--primary);color:#0b1116;margin-left:8px}
-.btn{background:var(--primary);color:#0b1116;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:#fff;color:#000;font-weight:600}
+.actions .btn{margin-left:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:#fff;color:#000;font-weight:600}
 .btn:hover{background:rgba(255,255,255,.95)}
-.btn-ghost{background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(255,255,255,.18)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.16)}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--primary)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
 .pill{display:inline-flex;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--muted);font-size:12px}
 .hero{padding:64px 0 32px}
 .hero h1{font-size:clamp(2.5rem,4vw,4rem);margin:12px 0 8px;font-weight:900;letter-spacing:-0.02em}
@@ -73,8 +72,8 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .light .btn-outline { color:#0b1220; border-color: rgba(0,0,0,0.35); background: transparent; }
 .light .pill { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.12); color:#35456b; }
 .light .card { background: #ffffff; border-color: rgba(0,0,0,0.08); }
-.light .chips li { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); } background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color:#35456b; }
-.light .tags span { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.18); } background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); color:#35456b; }
+.light .chips li { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color:#35456b; }
+.light .tags span { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); color:#35456b; }
 .light .lead, .light .list, .light .resume-note, .light .footer-inner { color:#35456b; }
 .light .footer { border-top:1px solid rgba(0,0,0,0.08); }
 .light .hero-photo img { box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.06); }
