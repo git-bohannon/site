@@ -84,3 +84,104 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .contact-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 .contact-label { font-weight:700; }
 .contact-actions a { margin-left:8px; }
+
+
+
+/* === Accent-forward headings (from Screenshot002.png) === */
+.hero h1,
+.section > h2,
+.section > h2 p,
+.card h3 {
+  color: var(--accent);
+  letter-spacing: .02em;
+}
+/* Keep body text readable next to accent titles */
+.card p, .lead, .list, .resume-note, .footer-inner { color: var(--text); }
+
+
+
+/* === Accent chips and tags === */
+.chips li,
+.tags span {
+  background: rgba(173, 124, 88, 0.10);   /* #ad7c58 @ 10% */
+  border-color: rgba(173, 124, 88, 0.45); /* #ad7c58 @ 45% */
+  color: var(--text);
+}
+
+
+
+/* === Hero overlay tint (teal + copper, subtle, non-blocking) === */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(82, 131, 137, 0.22) 0%, rgba(11, 15, 20, 0) 40%),
+    radial-gradient(1200px 600px at -10% -10%, rgba(173, 124, 88, 0.18), rgba(0,0,0,0) 60%);
+  mix-blend-mode: screen;
+}
+
+
+
+/* === Light Mode (derived from Screenshot002.png palette) === */
+.light {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --border: rgba(0,0,0,0.12);
+  --text: #1d2730;
+  --muted: rgba(29,39,48,0.70);
+  --primary: #528389;
+  --accent: #ad7c58;
+}
+.light .nav { background: rgba(255,255,255,0.75); border-bottom:1px solid var(--border); }
+.light .btn { background: var(--primary); color: #ffffff; }
+.light .btn-ghost { background: rgba(0,0,0,0.04); color: var(--text); border:1px solid rgba(0,0,0,0.12); }
+.light .btn-outline { background: transparent; color: var(--text); border:1px solid var(--primary); }
+.light .chips li,
+.light .tags span { background: rgba(173, 124, 88, 0.10); border-color: rgba(173,124,88,0.45); color: var(--text); }
+.light .card { background:#ffffff; border-color: rgba(0,0,0,0.08); }
+.light .footer { border-top:1px solid rgba(0,0,0,0.08); }
+.light .hero h1,
+.light .section > h2,
+.light .section > h2 p,
+.light .card h3 { color: var(--accent); }
+
+
+
+/* === Explicit Dark Mode variables (from Screenshot002.png palette) === */
+.dark {
+  --bg: linear-gradient(120deg, #0E1216 0%, #232729 60%, #0b0f14 100%);
+  --surface: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #EAF2F7;
+  --muted: rgba(234,242,247,0.75);
+  --primary: #528389; /* teal */
+  --accent: #AD7C58;  /* copper */
+}
+.dark .nav { background: rgba(0,0,0,0.30); border-bottom:1px solid var(--border); }
+.dark .btn { background: var(--primary); color: #0b1116; }
+.dark .btn-ghost { background: rgba(255,255,255,0.08); color: var(--text); border:1px solid rgba(255,255,255,0.18); }
+.dark .btn-outline { background: transparent; color: var(--text); border:1px solid var(--primary); }
+.dark .chips li, .dark .tags span { background: rgba(173, 124, 88, 0.10); border-color: rgba(173,124,88,0.45); color: var(--text); }
+.dark .card { background: var(--surface); border-color: var(--border); }
+.dark .footer { border-top:1px solid var(--border); }
+.dark .hero h1, .dark .section > h2, .dark .section > h2 p, .dark .card h3 { color: var(--accent); }
+
+
+
+/* === Bright hover for contact buttons in Dark Mode === */
+.dark .contact-actions .btn:hover,
+.dark .contact-actions .btn-ghost:hover,
+.dark .contact-actions .btn-outline:hover {
+  background: linear-gradient(90deg, rgba(82,131,137,0.9) 0%, rgba(173,124,88,0.9) 100%);
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0 12px rgba(173,124,88,0.6), 0 0 6px rgba(82,131,137,0.4);
+  transform: translateY(-1px);
+  transition: all 0.25s ease;
+}
