@@ -171,3 +171,17 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .dark .card { background: var(--surface); border-color: var(--border); }
 .dark .footer { border-top:1px solid var(--border); }
 .dark .hero h1, .dark .section > h2, .dark .section > h2 p, .dark .card h3 { color: var(--accent); }
+
+
+
+/* === Bright hover for contact buttons in Dark Mode === */
+.dark .contact-actions .btn:hover,
+.dark .contact-actions .btn-ghost:hover,
+.dark .contact-actions .btn-outline:hover {
+  background: linear-gradient(90deg, rgba(82,131,137,0.9) 0%, rgba(173,124,88,0.9) 100%);
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0 12px rgba(173,124,88,0.6), 0 0 6px rgba(82,131,137,0.4);
+  transform: translateY(-1px);
+  transition: all 0.25s ease;
+}
