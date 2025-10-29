@@ -150,3 +150,24 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .light .section > h2,
 .light .section > h2 p,
 .light .card h3 { color: var(--accent); }
+
+
+
+/* === Explicit Dark Mode variables (from Screenshot002.png palette) === */
+.dark {
+  --bg: linear-gradient(120deg, #0E1216 0%, #232729 60%, #0b0f14 100%);
+  --surface: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #EAF2F7;
+  --muted: rgba(234,242,247,0.75);
+  --primary: #528389; /* teal */
+  --accent: #AD7C58;  /* copper */
+}
+.dark .nav { background: rgba(0,0,0,0.30); border-bottom:1px solid var(--border); }
+.dark .btn { background: var(--primary); color: #0b1116; }
+.dark .btn-ghost { background: rgba(255,255,255,0.08); color: var(--text); border:1px solid rgba(255,255,255,0.18); }
+.dark .btn-outline { background: transparent; color: var(--text); border:1px solid var(--primary); }
+.dark .chips li, .dark .tags span { background: rgba(173, 124, 88, 0.10); border-color: rgba(173,124,88,0.45); color: var(--text); }
+.dark .card { background: var(--surface); border-color: var(--border); }
+.dark .footer { border-top:1px solid var(--border); }
+.dark .hero h1, .dark .section > h2, .dark .section > h2 p, .dark .card h3 { color: var(--accent); }
