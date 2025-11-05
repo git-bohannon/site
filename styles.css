@@ -17,7 +17,7 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .hero{padding:64px 0 32px}
 .hero h1{font-size:clamp(2.5rem,4vw,4rem);margin:12px 0 8px;font-weight:900;letter-spacing:-0.02em}
 .lead{color:var(--muted)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
 .chips li{font-size:12px;padding:6px 10px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid var(--border);color:var(--muted)}
 .section{padding:40px 0}
