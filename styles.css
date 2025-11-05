@@ -140,7 +140,7 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 }
 .light .nav { background: rgba(255,255,255,0.75); border-bottom:1px solid var(--border); }
 .light .btn { background: var(--primary); color: #ffffff; }
-.light .btn-ghost { background: rgba(0,0,0,0.04); color: var(--text); border:1px solid rgba(0,0,0,0.12); }
+.light .btn-ghost { background: rgba(255,255,255,0.75); color: var(--text); border:1px solid rgba(0,0,0,0.12); }
 .light .btn-outline { background: transparent; color: var(--text); border:1px solid var(--primary); }
 .light .chips li,
 .light .tags span { background: rgba(173, 124, 88, 0.10); border-color: rgba(173,124,88,0.45); color: var(--text); }
@@ -165,7 +165,7 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 }
 .dark .nav { background: rgba(0,0,0,0.30); border-bottom:1px solid var(--border); }
 .dark .btn { background: var(--primary); color: #0b1116; }
-.dark .btn-ghost { background: rgba(255,255,255,0.08); color: var(--text); border:1px solid rgba(255,255,255,0.18); }
+.dark .btn-ghost { background: rgba(0,0,0,0.08); color: var(--text); border:1px solid rgba(0,0,0,0.18); }
 .dark .btn-outline { background: transparent; color: var(--text); border:1px solid var(--primary); }
 .dark .chips li, .dark .tags span { background: rgba(173, 124, 88, 0.10); border-color: rgba(173,124,88,0.45); color: var(--text); }
 .dark .card { background: var(--surface); border-color: var(--border); }
