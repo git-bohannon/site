@@ -10,8 +10,8 @@ a.link, .links a:hover{color:var(--primary)} a:hover{text-decoration:underline}
 .actions .btn{background:var(--primary);color:#0b1116;margin-left:8px}
 .btn{background:var(--primary);color:#0b1116;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:#fff;color:#000;font-weight:600}
 .btn:hover{background:rgba(255,255,255,.95)}
-.btn-ghost{background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(255,255,255,.18)}
-.btn-ghost:hover{background:rgba(255,255,255,.16)}
+.btn-ghost{background:rgba(0,0,0,.08);color:var(--text);border:1px solid rgba(0,0,0,.18)}
+.btn-ghost:hover{background:rgba(0,0,0,.16)}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--primary)}
 .pill{display:inline-flex;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--muted);font-size:12px}
 .hero{padding:64px 0 32px}
